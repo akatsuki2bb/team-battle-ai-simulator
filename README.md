@@ -1,29 +1,60 @@
-# Team Battle AI Simulator
+# Team-Based Battle Simulation and Predictive Modeling
 
-This project provides a machine learning-powered simulation of strategic 6v6 team battles, where outcomes are predicted based on team composition. It includes structured data generation, a neural network classifier, and a real-time interactive prediction loop.
+This repository presents a structured framework for simulating competitive 6-versus-6 team battles and constructing a predictive machine learning model to estimate battle outcomes. The system integrates role-based team composition, probabilistic combat simulation, and iterative model training using PyTorch.
 
-## Features
+## Overview
 
-- Role-based team formation (Tank, Sweeper, Balanced)
-- Large-scale battle simulation to generate training data
-- PyTorch-based outcome prediction model
-- Adaptive AI opponent that improves over time
-- Interactive user vs AI match interface
+The project is designed for applications in:
+- Synthetic data generation for classification tasks
+- AI behavior modeling in turn-based competitive environments
+- Adaptive systems that evolve via real-time feedback
 
-## Setup Instructions
+## Core Capabilities
 
-1. **Install dependencies**:
+- **Strategic Team Generation**  
+  Classifies entities into predefined roles (Tank, Sweeper, Balanced) based on statistical heuristics.
+
+- **Battle Simulation Engine**  
+  Executes high-volume (100,000+) team battle simulations using stochastic turn-based logic to yield labeled outcome data.
+
+- **Machine Learning Architecture**  
+  Implements a supervised learning model (multi-layer perceptron) to predict battle outcomes from team configurations.
+
+- **Interactive Interface**  
+  Allows human users to input teams, evaluate predicted outcomes, simulate turn-by-turn interactions, and update the dataset.
+
+- **Continuous Learning Loop**  
+  Automatically retrains the model with newly logged data to improve generalization and AI performance over time.
+
+## Requirements
+
+Install dependencies:
 ```bash
 pip install pandas numpy torch scikit-learn tqdm
 ```
 
-2. **Prepare required data**:
-- `creature_with_4_moves.npy` → Place in `D:/adc/`
-- `*.csv` files (moves, stats, etc.) → Place in `D:/idm downloads/data/csv/`
+## File Placement
 
-3. **Run the Notebook**:
-Open and execute `team_battle_ai.ipynb` in Jupyter.
+Ensure the following directory structure:
 
-## Author
+```
+D:/adc/
+ ├─ creature_with_4_moves.npy
+ └─ team_battle_results.csv
 
-Built for applied AI research in game simulation and predictive modeling. Open for extension into advanced strategy or educational use cases.
+D:/idm downloads/data/csv/
+ ├─ moves.csv
+ ├─ stats.csv
+ ├─ pokemon.csv
+ └─ pokemon_stats.csv
+```
+
+## Execution
+
+Run the notebook `team_battle_ai.ipynb` in a Jupyter environment to initiate simulation, training, or interactive inference.
+
+## Licensing
+
+This project is intended for educational, research, and non-commercial use.
+
+© 2025. All rights reserved.
