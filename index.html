@@ -472,7 +472,7 @@ function shuffle(a){
 }
 function reset(randomTeams){
  var ids=randomTeams?shuffle(DEX.map(function(p){return p.id;})):null;
- var you=randomTeams?ids.slice(0,6):[25,6,9,3,94,149];
+ var you=randomTeams?ids.slice(0,6):[6,25,9,3,94,149];
  var foe=randomTeams?ids.slice(6,12):[59,130,76,65,143,26];
  state.player=you.map(getPokemon);state.enemy=foe.map(getPokemon);
  state.activePlayer=0;state.activeEnemy=0;state.turn=1;state.busy=false;state.ended=false;
